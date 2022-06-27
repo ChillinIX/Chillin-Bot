@@ -14,7 +14,7 @@ async def on_ready():
 
 inital_extensions = []
 
-for filename in os.listdir('Chillin-Bot\cogs'):
+for filename in os.listdir('cogs'):
   if filename.endswith('.py'):
     inital_extensions.append("cogs." +filename[:-3])
 
