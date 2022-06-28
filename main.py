@@ -22,4 +22,4 @@ if __name__=='__main__':
   for extensions in inital_extensions:
     client.load_extension(extensions)
 
-client.run(Token)
+client.run(discordToken)

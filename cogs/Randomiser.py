@@ -5,8 +5,6 @@ import random
 import numpy
 from List import *
 
-
-
 class Randomiser(commands.Cog):
     def __init__(self,client):
         self.client = client
