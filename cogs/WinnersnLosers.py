@@ -1,3 +1,14 @@
+import discord
+import os
+from discord.ext import commands
+
+class WinnersnLosers(commands.Cog):
+    def __init__(self,client):
+        self.client = client
+
+def setup(client):
+  client.add_cog(WinnersnLosers(client))
+
 """
 imports, call player, call heroes, call matches for this patch for that player
 
@@ -20,13 +31,11 @@ Displays your bottom 5 characters for this patch along with your matches played 
 removes the 0% win rates becasue you played a character once or 100% winrates for 
 
 """
-from Keys import *
-
-opendotaToken
 
 playerlist = [10, 55, 230, 2, 15, 200, 404, 300, 1532, 155, 1, 5, 3]
 
 
-
+'''
 print (playerlist[:5])
 print (playerlist[-5:])
+'''

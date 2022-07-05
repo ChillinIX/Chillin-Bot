@@ -1,3 +1,14 @@
+import discord
+from discord.ext import commands
+import os
+
+class CharacterRandom(commands.Cog):
+    def __init__(self,client):
+        self.client = client
+
+def setup(client):
+  client.add_cog(CharacterRandom(client))
+
 """
 random player, random character
 
