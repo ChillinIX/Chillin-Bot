@@ -1,6 +1,15 @@
 import discord
 import os
+import random
+import requests
+import opendota
 from discord.ext import commands
+
+client=opendota.OpenDota()
+playerResult=requests.get("https://api.opendota.com/api/heroes/1/matchups")
+resultData = playerResult.json()
+
+print(resultData)
 
 class WinnersnLosers(commands.Cog):
     def __init__(self,client):
@@ -8,14 +17,8 @@ class WinnersnLosers(commands.Cog):
 
 def setup(client):
   client.add_cog(WinnersnLosers(client))
-
-"""
-imports, call player, call heroes, call matches for this patch for that player
-
-variables establishing the calls
-
-discern the players top 5
-
+  
+'''
 if games played >= 10 :
     add to playedCharacters
     top5 = List[:5]
@@ -30,12 +33,7 @@ Displays your bottom 5 characters for this patch along with your matches played 
 ** MUST HAVE 10 MATCHES PLAYED TO COUNT **
 removes the 0% win rates becasue you played a character once or 100% winrates for 
 
-"""
-
 playerlist = [10, 55, 230, 2, 15, 200, 404, 300, 1532, 155, 1, 5, 3]
-
-
-'''
 print (playerlist[:5])
 print (playerlist[-5:])
 '''

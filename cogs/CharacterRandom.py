@@ -6,9 +6,6 @@ class CharacterRandom(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-def setup(client):
-  client.add_cog(CharacterRandom(client))
-
 """
 random player, random character
 
@@ -24,3 +21,6 @@ Shaun - Phantom Assassin
 Casey - Witch Doctor
 
 """
+
+def setup(client):
+  client.add_cog(CharacterRandom(client))
