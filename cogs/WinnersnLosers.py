@@ -3,20 +3,12 @@ import os
 import random
 import requests
 import opendota
+import json
 from discord.ext import commands
-
-client=opendota.OpenDota()
-playerResult=requests.get("https://api.opendota.com/api/heroes/1/matchups")
-resultData = playerResult.json()
-
-print(resultData)
 
 class WinnersnLosers(commands.Cog):
     def __init__(self,client):
         self.client = client
-
-def setup(client):
-  client.add_cog(WinnersnLosers(client))
   
 '''
 if games played >= 10 :
@@ -37,3 +29,6 @@ playerlist = [10, 55, 230, 2, 15, 200, 404, 300, 1532, 155, 1, 5, 3]
 print (playerlist[:5])
 print (playerlist[-5:])
 '''
+
+def setup(client):
+  client.add_cog(WinnersnLosers(client))
