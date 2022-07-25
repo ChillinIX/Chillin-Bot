@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+
 love = 0
 
 class Greetings(commands.Cog):
@@ -13,10 +14,22 @@ class Greetings(commands.Cog):
   @commands.command()
   async def goodbot(self,ctx):
     await ctx.send(f"Thanks {ctx.author.name}! [+1]")
+    if ctx.send == "Thanks":
+      try:
+        f = open('counter.txt','r')
+        love = int(f.readline())
+      except:
+        f = open('counter.txt','a')
+        f.write(str(0))
+      
+      love += 1
+      f = open('counter.txt','w')
+      f.write(str(love))
+
+      await message.channel.send('Test!' + str(love))
 
   @commands.command()
   async def love(self,ctx):
-    
     await ctx.send(f"love count: {love}")
 
 def setup(client):
