@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-from Keys import *
+from keys import *
 
 intents=discord.Intents.default()
 intents.members=True

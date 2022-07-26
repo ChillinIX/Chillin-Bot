@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-class CharacterRandom(commands.Cog):
+class characterRandom(commands.Cog):
     def __init__(self,client):
         self.client = client
 
@@ -23,4 +23,4 @@ Casey - Witch Doctor
 """
 
 def setup(client):
-  client.add_cog(CharacterRandom(client))
+  client.add_cog(characterRandom(client))

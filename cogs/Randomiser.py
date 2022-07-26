@@ -1,11 +1,11 @@
 import discord
 from discord.ext import commands
-import os
+# import os
 import random
 import numpy
-from List import *
+from list import *
 
-class Randomiser(commands.Cog):
+class randomiser(commands.Cog):
     def __init__(self,client):
         self.client = client
 
@@ -21,4 +21,4 @@ class Randomiser(commands.Cog):
         await ctx.send(embed=split)
 
 def setup(client):
-  client.add_cog(Randomiser(client))
+  client.add_cog(randomiser(client))

@@ -36,7 +36,7 @@ colinData=playerColin.json()
 playerConnor=requests.get(openURL+playersURL+connorID)
 connorData=playerConnor.json()
 
-class Library(commands.Cog):
+class library(commands.Cog):
     def __init__(self,client):
         self.client = client
 
@@ -44,4 +44,4 @@ class Library(commands.Cog):
 
 
 def setup(client):
-  client.add_cog(Library(client))
+  client.add_cog(library(client))

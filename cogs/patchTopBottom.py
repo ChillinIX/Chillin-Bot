@@ -1,12 +1,8 @@
 import discord
 import os
-import random
-import requests
-import opendota
-import json
 from discord.ext import commands
 
-class WinnersnLosers(commands.Cog):
+class patchTopBottom(commands.Cog):
     def __init__(self,client):
         self.client = client
   
@@ -31,4 +27,4 @@ print (playerlist[-5:])
 '''
 
 def setup(client):
-  client.add_cog(WinnersnLosers(client))
+  client.add_cog(patchTopBottom(client))
