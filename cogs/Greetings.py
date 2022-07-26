@@ -12,21 +12,21 @@ class greetings(commands.Cog):
   @commands.command()
   async def goodbot(self,ctx):
     try:
-      f = open('counter.txt','r')
+      f = open('cogs\DB\counter.txt','r')
       love = int(f.readline())
     except:
-      f = open('counter.txt','a')
+      f = open('cogs\DB\counter.txt','a')
       f.write(str(0))
     love += 1
-    f = open('counter.txt','w')
+    f = open('cogs\DB\counter.txt','w')
     f.write(str(love))
     return await ctx.send(f"Thanks {ctx.author.name}! :heart_eyes:")
 
   @commands.command()
   async def love(self,ctx):
-    l = open('counter.txt','r')
+    l = open('cogs\DB\counter.txt','r')
     love = int(l.readline())
-    await ctx.send(f"love: {love}")
+    await ctx.send(f"Love = {love}")
 
 def setup(client):
   client.add_cog(greetings(client))
