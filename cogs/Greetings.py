@@ -5,12 +5,12 @@ class greetings(commands.Cog):
   def __init__(self,client):
     self.client = client
 
-  # !hello - command to test connectivity
+  # !hello - connectivity testing
   @commands.command()
   async def hello(self,ctx):
     await ctx.send(f"Sup {ctx.author.name}")
 
-  # !goodbot - to commend the bot
+  # !goodbot - bot commends
   @commands.command()
   async def goodbot(self,ctx):
     try:
@@ -31,7 +31,7 @@ class greetings(commands.Cog):
     love = int(l.readline())
     await ctx.send(f"Love = {love}")
 
-  # !amideveloper - testing for user checking
+  # !amideveloper - test for checking discord ID in a command
   @commands.command()
   async def amideveloper(self,ctx):
     if ctx.author.id == 198622235236237312:

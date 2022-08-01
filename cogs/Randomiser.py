@@ -20,17 +20,17 @@ class randomiser(commands.Cog):
         inhouse.add_field(name="Dire",value=' \n'.join(splitting[1]), inline = True)
         await ctx.send(embed=inhouse)
 
-    # !giveteam - random 5 people in 5 positions with random characters
+    # !giveteam - random 5 people in random positions with random characters
     @commands.command()
     async def giveteam(self,ctx):
     
-        # Team name random for Adjectives
+        # Random team name - Adjective
         filename1=open('cogs/DB/f1.txt','r')
         wordList1=[line.rstrip('\n') for line in filename1]
         filename1.close()
         out1 = random.choice(wordList1)
     
-        # Team name random for Animals
+        # Random team name - Animal
         filename2=open('cogs/DB/f2.txt','r')
         wordList2=[line.rstrip('\n') for line in filename2]
         filename2.close()
@@ -40,6 +40,10 @@ class randomiser(commands.Cog):
         position = ['1', '2', '3', '4', '5']
         player = ['Colin','Nise','Connor','Harry','Tim']
         random.shuffle(player)
+
+        # 5 hero lists, 1 for each position
+        # print hero in same format for positions
+        # Players are randomised into the positions
 
         # Build for the discord frame
         randomteam = discord.Embed(title=f"The {out1} {out2}'s",color=0x03dffc)
