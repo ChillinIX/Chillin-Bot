@@ -5,10 +5,12 @@ class greetings(commands.Cog):
   def __init__(self,client):
     self.client = client
 
+  # !hello - command to test connectivity
   @commands.command()
   async def hello(self,ctx):
     await ctx.send(f"Sup {ctx.author.name}")
 
+  # !goodbot - to commend the bot
   @commands.command()
   async def goodbot(self,ctx):
     try:
@@ -22,11 +24,19 @@ class greetings(commands.Cog):
     f.write(str(love))
     return await ctx.send(f"Thanks {ctx.author.name}! :heart_eyes:")
 
+  # !love - shows commends from goodbot
   @commands.command()
   async def love(self,ctx):
     l = open('cogs\DB\counter.txt','r')
     love = int(l.readline())
     await ctx.send(f"Love = {love}")
+
+  # !amideveloper - testing for user checking
+  @commands.command()
+  async def amideveloper(self,ctx):
+    if ctx.author.id == 198622235236237312:
+      return await ctx.send(f"Of course you are {ctx.author.name}... you wrote me")
+    await ctx.send(f"no, heck off {ctx.author.name}")
 
 def setup(client):
   client.add_cog(greetings(client))

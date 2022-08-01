@@ -7,6 +7,7 @@ class randomiser(commands.Cog):
     def __init__(self,client):
         self.client = client
 
+    # !inhouse - 10 people randomised onto even teams of radiant and dire
     @commands.command()
     async def inhouse(self,ctx):
         inhouse = discord.Embed(title="5v5 Randomiser",color=0x03dffc)
@@ -19,17 +20,34 @@ class randomiser(commands.Cog):
         inhouse.add_field(name="Dire",value=' \n'.join(splitting[1]), inline = True)
         await ctx.send(embed=inhouse)
 
+    # !giveteam - random 5 people in 5 positions with random characters
     @commands.command()
-    async def random(self, ctx):
-        randomd = discord.Embed(title="Random Team",color=0x03dffc)
-        randomd.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
-        randomd.set_thumbnail(url="https://i.imgur.com/U2N9l0E.jpg")
-        player='Colin'
-        playerHero=" - "+"Axe"
-        grouping = player + playerHero
+    async def giveteam(self,ctx):
+    
+        # Team name random for Adjectives
+        filename1=open('cogs/DB/f1.txt','r')
+        wordList1=[line.rstrip('\n') for line in filename1]
+        filename1.close()
+        out1 = random.choice(wordList1)
+    
+        # Team name random for Animals
+        filename2=open('cogs/DB/f2.txt','r')
+        wordList2=[line.rstrip('\n') for line in filename2]
+        filename2.close()
+        out2 = random.choice(wordList2)
 
-        randomd.add_field(name="Team Test!", value=' \n'.join(grouping), inline=True)
-        await ctx.send(embed=randomd)
+        # players and positions variables
+        position = ['1', '2', '3', '4', '5']
+        player = ['Colin','Nise','Connor','Harry','Tim']
+        random.shuffle(player)
+
+        # Build for the discord frame
+        randomteam = discord.Embed(title=f"The {out1} {out2}'s",color=0x03dffc)
+        randomteam.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
+        randomteam.set_thumbnail(url="https://i.imgur.com/U2N9l0E.jpg")
+        randomteam.add_field(name="Position",value=' \n'.join(position), inline = True)
+        randomteam.add_field(name="Player",value=' \n'.join(player), inline = True)
+        await ctx.send(embed=randomteam)
 
 def setup(client):
   client.add_cog(randomiser(client))

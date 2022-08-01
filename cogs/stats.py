@@ -5,6 +5,7 @@ class patchplayed(commands.Cog):
     def __init__(self,client):
         self.client = client
 
+    # !patchplayed - shows the top 5 and bottom 5 performing heroes played this patch for the user
     @commands.command()
     async def patchplayed(self,ctx):
         dota = True
