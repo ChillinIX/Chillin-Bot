@@ -1,10 +1,7 @@
-from typing import Collection
 import discord
 from discord.ext import commands
-# import os
 import random
 import numpy
-from list import *
 
 class randomiser(commands.Cog):
     def __init__(self,client):
@@ -15,6 +12,7 @@ class randomiser(commands.Cog):
         inhouse = discord.Embed(title="5v5 Randomiser",color=0x03dffc)
         inhouse.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
         inhouse.set_thumbnail(url="https://i.imgur.com/U2N9l0E.jpg")
+        players = ["Anthony","Shanise","Connor","Colin","Harry","Tim","Shaun","Ivan","Tristan","Casey"]
         random.shuffle(players)
         splitting = numpy.array_split(players,2)
         inhouse.add_field(name="Radiant",value=' \n'.join(splitting[0]), inline = True)

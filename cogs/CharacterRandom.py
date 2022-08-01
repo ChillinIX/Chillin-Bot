@@ -18,10 +18,15 @@ class characterRandom(commands.Cog):
     wordList2=[line.rstrip('\n') for line in filename2]
     filename2.close()
     out2 = random.choice(wordList2)
+
+    players = ["Shanise","Connor","Colin","Harry","Tim"]
+    pos = ["Pos1","Pos2","Pos3","Pos4","Pos5"]
+    random.shuffle(players)
+
+    for r in players:
+      print(pos,players)
     
     return await ctx.send(f"Team Name: {out1} {out2}")
-
-
 
 # random player, random character
 
