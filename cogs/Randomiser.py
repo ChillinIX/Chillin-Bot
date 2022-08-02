@@ -10,14 +10,14 @@ class randomiser(commands.Cog):
     # !inhouse - 10 people randomised onto even teams of radiant and dire
     @commands.command()
     async def inhouse(self,ctx):
-        inhouse = discord.Embed(title="5v5 Randomiser",color=0x03dffc)
+        inhouse = discord.Embed(title='5v5 Randomiser',color=0x03dffc)
         inhouse.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
-        inhouse.set_thumbnail(url="https://i.imgur.com/U2N9l0E.jpg")
-        players = ["Anthony","Shanise","Connor","Colin","Harry","Tim","Shaun","Ivan","Tristan","Casey"]
+        inhouse.set_thumbnail(url='https://i.imgur.com/U2N9l0E.jpg')
+        players = ['Anthony','Shanise','Connor','Colin','Harry','Tim','Shaun','Ivan','Tristan','Casey']
         random.shuffle(players)
         splitting = numpy.array_split(players,2)
-        inhouse.add_field(name="Radiant",value=' \n'.join(splitting[0]), inline = True)
-        inhouse.add_field(name="Dire",value=' \n'.join(splitting[1]), inline = True)
+        inhouse.add_field(name='Radiant',value=' \n'.join(splitting[0]), inline = True)
+        inhouse.add_field(name='Dire',value=' \n'.join(splitting[1]), inline = True)
         await ctx.send(embed=inhouse)
 
     # !giveteam - random 5 people in random positions with random characters
@@ -48,9 +48,9 @@ class randomiser(commands.Cog):
         # Build for the discord frame
         randomteam = discord.Embed(title=f"The {out1} {out2}'s",color=0x03dffc)
         randomteam.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
-        randomteam.set_thumbnail(url="https://i.imgur.com/U2N9l0E.jpg")
-        randomteam.add_field(name="Position",value=' \n'.join(position), inline = True)
-        randomteam.add_field(name="Player",value=' \n'.join(player), inline = True)
+        randomteam.set_thumbnail(url='https://i.imgur.com/U2N9l0E.jpg')
+        randomteam.add_field(name='Position',value=' \n'.join(position), inline = True)
+        randomteam.add_field(name='Player',value=' \n'.join(player), inline = True)
         await ctx.send(embed=randomteam)
 
 def setup(client):

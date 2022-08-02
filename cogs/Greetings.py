@@ -8,7 +8,7 @@ class greetings(commands.Cog):
   # !hello - connectivity testing
   @commands.command()
   async def hello(self,ctx):
-    await ctx.send(f"Sup {ctx.author.name}")
+    await ctx.send(f'Sup {ctx.author.name}')
 
   # !goodbot - bot commends
   @commands.command()
@@ -35,8 +35,8 @@ class greetings(commands.Cog):
   @commands.command()
   async def amideveloper(self,ctx):
     if ctx.author.id == 198622235236237312:
-      return await ctx.send(f"Of course you are {ctx.author.name}... you wrote me")
-    await ctx.send(f"no, heck off {ctx.author.name}")
+      return await ctx.send(f'Of course you are {ctx.author.name}... you wrote me')
+    await ctx.send(f'no, heck off {ctx.author.name}')
 
 def setup(client):
   client.add_cog(greetings(client))
