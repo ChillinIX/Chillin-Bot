@@ -12,7 +12,6 @@ class patchplayed(commands.Cog):
 
 #if games played >= 10 :
 #    add to playedCharacters
-#    top5 = List[:5]
 #    bottom5 = List[5:]
 
 #** MUST HAVE 10 MATCHES PLAYED TO COUNT **
