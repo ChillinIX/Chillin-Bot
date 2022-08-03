@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+import requests
+from keys import *
 
 class patchplayed(commands.Cog):
     def __init__(self,client):
@@ -8,7 +10,12 @@ class patchplayed(commands.Cog):
     # !patchplayed - shows the top 5 and bottom 5 performing heroes played this patch for the user
     @commands.command()
     async def patchplayed(self,ctx):
-        dota = True
+        playerID = '44067861'
+        api_base_url = 'https://www.opendota.com/'
+        endpoint_path = 'players/{playerID}'
+        endpoint = f"{api_base_url}{endpoint_path}?api_key={api_key}"
+        r = requests.get(endpoint)
+        print (r.status_code)
 
 #if games played >= 10 :
 #    add to playedCharacters
